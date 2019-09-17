@@ -1,0 +1,24 @@
+<!-- Hero Section Start -->
+<div class="hero-slider hero-slider-three">
+    <% @sliders.each_with_index do |slider,index| %>
+    <!-- Single Slide Start -->
+    <div class="single-slide" style="background-image: url(<%= slider.image_url %>)">
+        <!-- Hero Content One Start -->
+        <div class="hero-content-two container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="slider-content-text text-center">
+                        <h1><%= slider.name %></h1>
+                        <% if slider.note.present? %>
+                            <p><%= slider.note %></p>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Content One End -->
+    </div>
+    <!-- Single Slide End -->
+    <% end %>
+</div>
+<!-- Hero Section End -->

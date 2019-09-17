@@ -1,0 +1,164 @@
+body {
+  font-family: "Rubik", "Roboto", "Helvetica", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", "Helvetica", sans-serif;
+}
+header.header .contact-info .telephone {
+  font-size: 18px;s
+  line-height: 18px;
+}
+header.header .contact-info .single-costomer-box {
+  padding: 10px 15px 10px;
+}
+.logo-area {
+  padding: 5px 0 5px;
+}
+.is-sticky .logo-area img {
+  height: 50px;
+}
+.main-menu-area ul > li:last-child {
+  margin-right: 0;
+}
+/*.main-menu-area ul > li.active > a::before {*/
+/*  visibility: visible;*/
+/*  opacity: 1;*/
+/*  -ms-filter: 1;*/
+/*  width: 100%;*/
+/*}*/
+.main-menu-area ul > li.active > a {
+  color: #80BB01 !important;
+}
+.footer {
+  position: relative;
+}
+.footer-top {  
+  position: relative;
+  background-image: url(../images/bg/footer-bg.png), linear-gradient(rgb(66, 66, 66),rgb(0, 0, 0, 0.5));
+    background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  background-color: rgba(0, 124, 68, 0.5);
+  width: 100%;
+  padding: 50px 0;
+  min-height: 250px;
+}
+.footer-bottom {
+  padding: 10px 0;
+  line-height: 18px;
+}
+.contact-call-wrap .footer-call h6, .contact-call-wrap-top .footer-call h6 {
+  font-weight: 900;
+}
+.widget-footer .company-name {
+  font-size: 20px;
+  /*color: #ff5200;*/
+  font-weight: bold;
+}
+.hero-content-one .slider-content-text h1, .hero-content-two .slider-content-text h1 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  padding: 10px 30px;
+  background: rgba(0, 0, 0, 0.498039);
+  width: auto;
+  /* display: inline-block; */
+  display: table;
+  font-weight: 700 !important;
+}
+.hero-content-one .slider-content-text p, .hero-content-two .slider-content-text p {
+  color: #ffffff;
+    font-size: 16px;
+    padding: 5px 30px;
+    background: rgba(0, 0, 0, 0.498039);
+    width: auto;
+    /* display: inline-block; */
+    display: table;
+    font-weight: 600 !important;
+}
+.single-product-wrap .product-content .product-name, .single-product-two .product-content .product-name {
+  font-size: 15px;
+  line-height: 20px;
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+.single-product-wrap .product-content .price-box, .single-product-two .product-content .price-box {
+  margin-bottom: 15px;
+}
+.single-product-wrap .product-button-action .call, .single-product-two .product-button-action .call {
+  background: #80bb01;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 35px;
+  text-shadow: none;
+  text-transform: capitalize;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+  padding: 0 18px;
+}
+.pagination-box li > span {
+    color: #333333;
+    display: block;
+    padding: 0 12px;
+    height: 30px;
+    background: #f1f1f1;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 3px;
+}
+.pagination-box li.active > span {
+    color: #ffffff;
+    background: #80BB01;
+}
+.pagination-box li.prev.disabled, .pagination-box li.next.disabled {
+    display: none;
+}
+.pagination-box li a:hover > span {
+  color: #fff;
+}
+.category-sub-menu ul li > a {
+  color: #363f4d;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 10px 0 10px 15px;
+  position: relative;
+}
+.category-sub-menu ul li > a::before {
+  color: #333333;
+  content: "+";
+  font-family: plaza-icon;
+  position: absolute;
+  left: 0px;
+}
+.single-add-to-cart .call-me {
+    background: #0E7346;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 35px;
+    text-shadow: none;
+    text-align: center;
+    border-radius: 3px;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+    width: 100%;
+}

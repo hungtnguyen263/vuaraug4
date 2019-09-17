@@ -1,0 +1,36 @@
+<%
+    if menu.children.empty?
+        if menu.parent.present?
+            children = menu.parent.children
+        else
+            children = Erp::Menus::Menu.get_menus
+        end
+    else
+        children = menu.children
+    end
+%>
+<% if !children.empty? %>
+<!-- shop-sidebar-wrap start -->
+<div class="shop-sidebar-wrap">
+    <div class="shop-box-area">
+
+        <!--sidebar-categores-box start  -->
+        <div class="sidebar-categores-box shop-sidebar">
+            <h4 class="title">Danh mục sản phẩm</h4>
+            <!-- category-sub-menu start -->
+            <div class="category-sub-menu">
+                <ul>
+                    <% children.get_active.each do |menu| %>
+                        <li>
+                            <a href="<%= menu_link(menu) %>"><%= menu.name %> <span>(<%= menu.get_products.count %>)</span></a>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+            <!-- category-sub-menu end -->
+        </div>
+        <!--sidebar-categores-box end  -->
+    </div>
+</div>
+<!-- shop-sidebar-wrap end -->
+<% end %>

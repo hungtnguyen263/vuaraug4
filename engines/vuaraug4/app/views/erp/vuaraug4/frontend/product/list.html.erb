@@ -1,0 +1,91 @@
+<!-- breadcrumb-area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- breadcrumb-list start -->
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="<%= erp_vuaraug4.root_path %>"><i class="icon fa fa-home"></i></a></li>
+                    <li class="breadcrumb-item active">Sản phẩm</li>
+                </ul>
+                <!-- breadcrumb-list end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+
+
+<!-- main-content-wrap start -->
+<div class="main-content-wrap shop-page section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 order-lg-1 order-1">
+
+                <!-- shop-product-wrapper start -->
+                <div class="shop-product-wrapper">
+                    <div class="section-title text-center mb-30">
+                        <h2>Sản phẩm</h2>
+                    </div>
+
+                    <!-- shop-products-wrap start -->
+                    <div class="shop-products-wrap">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="grid">
+                                <div class="shop-product-wrap">
+                                    <div class="row row-8">
+                                        <% @products.each do |product| %>
+                                            <% product_images = product.product_images.where.not(image_url: nil) %>
+                                            <div class="product-col col-lg-3 col-md-4 col-sm-6">
+                                                <!-- Single Product Start -->
+                                                <div class="single-product-wrap mt-10">
+                                                    <div class="product-image">
+                                                        <%= link_to image_tag(product_image(product_images, 'first', 'medium'), alt: product.product_name),
+                                                            product_link(product),
+                                                            title: product.product_name
+                                                        %>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        <h6 class="product-name">
+                                                            <%= link_to product.product_name, product_link(product), title: product.product_name %>
+                                                        </h6>
+                                                        <div class="price-box">
+                                                            <span class="new-price">Giá bán sỉ</span>
+                                                        </div>
+    
+                                                        <div class="product-button-action">
+                                                            <a href="tel:097 202 81 99" class="call">Bấm để liên hệ</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Single Product End -->
+                                            </div>
+                                        <% end %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- shop-products-wrap end -->
+
+                    <!-- paginatoin-area start -->
+                    <div class="paginatoin-area">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <%= will_paginate @products,
+                                    previous_label: '<span aria-hidden="true">&laquo;</span>',
+                                    next_label: '<span aria-hidden="true">&raquo;</span>',
+                                    class: 'pagination-box',
+                                    renderer: BootstrapPagination::Rails
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- paginatoin-area end -->
+                </div>
+                <!-- shop-product-wrapper end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main-content-wrap end -->

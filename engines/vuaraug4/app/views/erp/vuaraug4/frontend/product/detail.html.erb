@@ -1,0 +1,170 @@
+<% title @product.name %>
+<% product_images = @product.product_images.where.not(image_url: nil) %>
+
+<!-- breadcrumb-area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- breadcrumb-list start -->
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="<%= erp_vuaraug4.root_path %>"><i class="icon fa fa-home"></i></li>
+                    <li class="breadcrumb-item"><a href="<%= erp_vuaraug4.all_product_path %>">Sản phẩm</a></li>
+                    <li class="breadcrumb-item"><a href="<%= menu_link(@menu) %>"><%= @menu.name %></a></li>
+                    <li class="breadcrumb-item active"><%= @product.name %></li>
+                </ul>
+                <!-- breadcrumb-list end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+
+
+<!-- main-content-wrap start -->
+<div class="main-content-wrap shop-page section-ptb">
+    <div class="container">
+        <div class="row single-product-area product-details-inner">
+            <div class="col-lg-5 col-md-6">
+                <!-- Product Details Left -->
+                <% if product_images.count == 0 %>
+                    <!---------       --------->
+                <% elsif product_images.count == 1 %>
+                    <div class="pro-large-img img-zoom">
+                        <img src="<%= @product.main_image.image_url.large %>" alt="<%= @product.name %>" />
+                    </div>
+                <% else product_images.count > 1 %>
+                    <div class="product-large-slider">
+                        <% product_images.each_with_index do |product_image,index| %>
+                            <div class="pro-large-img img-zoom">
+                                <img src="<%= product_image.image_url.large %>" alt="<%= @product.name %>" />
+                                <a href="<%= product_image.image_url.large %>" data-fancybox="images"><i class="fa fa-search"></i></a>
+                            </div>
+                        <% end %>
+                    </div>
+                    <div class="product-nav">
+                        <% product_images.each_with_index do |product_image,index| %>
+                            <div class="pro-nav-thumb">
+                                <img src="<%= product_image.image_url.small %>" alt="<%= @product.name %>" />
+                            </div>
+                        <% end %>
+                    </div>
+                <% end %>
+                <!--// Product Details Left -->
+            </div>
+
+            <div class="col-lg-7 col-md-6">
+                <div class="product-details-view-content">
+                    <div class="product-info">
+                        <h3><%= @product.name %></h3>
+                        <div class="price-box">
+                            <span class="new-price">Giá bán sỉ</span>
+                        </div>
+                        <p>
+                            <%= @product.short_description.html_safe if @product.short_description.present? %>
+                        </p>
+                        
+                        <div class="single-add-to-cart">
+                            <form action="#" class="cart-quantity d-flex">
+                                <% if false %>
+                                    <div class="quantity">
+                                        <div class="cart-plus-minus">
+                                            <input type="number" class="input-text" name="quantity" value="1" title="Qty">
+                                        </div>
+                                    </div>
+                                    <button class="add-to-cart" type="submit">Thêm vào giỏ hàng</button>
+                                <% end %>
+                                <a href="tel:097.202.81.99" class="call-me">Gọi ngay: 097.202.81.99</a>
+                            </form>
+                        </div>
+                        <ul class="single-add-actions">
+                            
+                        </ul>
+                        <ul class="stock-cont">
+                            <li class="product-sku">Xuất xứ: <span>Đà Lạt</span></li>
+                            <li class="product-stock-status">Trạng thái: <a href="#">Còn hàng</a></li>
+                            <li class="product-stock-status">Quy cách: <a href="#">Kg</a></li>
+                        </ul>
+                        <div class="share-product-socail-area">
+                            <p>Chia sẻ: </p>
+                            <ul class="single-product-share">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-description-area section-pt">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product-details-tab">
+                        <ul role="tablist" class="nav">
+                            <li class="active" role="presentation">
+                                <a data-toggle="tab" role="tab" href="#description" class="active">Thông tin và mô tả</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product_details_tab_content tab-content">
+                        <!-- Start Single Content -->
+                        <div class="product_tab_content tab-pane active" id="description" role="tabpanel">
+                            <div class="product_description_wrap  mt-30">
+                                <div class="product_desc mb-30">
+                                    <%= @product.description.present? ? @product.description.html_safe : 'Đang cập nhật' %>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% related_products = @menu.get_products_for_categories(exclude_product_id: @product.id) %>
+        <% if related_products.present? %>
+            <div class="related-product-area section-pt">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h3> Sản phẩm cùng loại</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-8 product-row-6-active">
+                    <% related_products.each do |related_product| %>
+                        <div class="product-col">
+                            <!-- Single Product Start -->
+                            <div class="single-product-wrap mt-10">
+                                <div class="product-image">
+                                    <%= link_to image_tag(product_image(related_product.product_images, 'first', 'medium'), alt: related_product.product_name),
+                                        product_link(related_product),
+                                        title: related_product.product_name
+                                    %>
+                                </div>
+                                <div class="product-content">
+                                    <h6 class="product-name">
+                                        <%= link_to related_product.product_name, product_link(related_product), title: related_product.product_name %>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="new-price">Giá bán sỉ</span>
+                                    </div>
+    
+                                    <div class="product-button-action">
+                                        <a href="tel:097 202 81 99" class="call">Bấm để liên hệ</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Product End -->
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+<!-- main-content-wrap end -->

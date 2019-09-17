@@ -12,13 +12,13 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/engines/*
+#/engines/*
 
 # Ignore Byebug command history file.
 .byebug_history
 
 # Ignore Gemfile
-/Gemfile
+#/Gemfile
 /Gemfile.lock
 
 # Ignore database.yml
