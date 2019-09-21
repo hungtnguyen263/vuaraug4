@@ -6,7 +6,14 @@ module Erp
           #@web_info = Erp::Contacts::Contact.get_main_contact
           
           @menus = Erp::Menus::Menu.get_active.where(parent_id: nil)
-          @products = Erp::Products::Product.all.paginate(:page => params[:page], :per_page => 20)
+          
+          @products = Erp::Products::Product.get_active
+          product_ids = @products.where(is_bestseller: true).order(:created_at).pluck(:id) +
+                        @products.where.not(is_bestseller: true).order(:created_at).pluck(:id)
+          
+          @products = @products.where(id: product_ids)
+          
+          @products = @products.order(product_ids).paginate(:page => params[:page], :per_page => 20)
         end
         
         def category

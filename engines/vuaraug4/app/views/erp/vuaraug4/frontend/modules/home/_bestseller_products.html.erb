@@ -1,0 +1,50 @@
+<!-- Product Area Start -->
+<div class="product-area section-pt-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <!-- Section Title Start -->
+                <div class="section-title">
+                    <h3>RAU, CỦ, QUẢ BÁN CHẠY</h3>
+                </div>
+                <!-- Section Title End -->
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <!-- Section Title Start -->
+                <div class="view-all-product text-right">
+                    <!--<a href="#">XEM THÊM <i class="icon-chevrons-right"></i></a>-->
+                </div>
+                <!-- Section Title End -->
+            </div>
+        </div>
+        
+        <div class="row row-8 product-module">
+            <% bestseller_products.each do |product| %>
+                <% product_images = product.product_images.where.not(image_url: nil) %>
+                <div class="product-col col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-product-wrap mt-10">
+                        <div class="product-image">
+                            <%= link_to image_tag(product_image(product_images, 'first', 'medium'), alt: product.product_name),
+                                product_link(product),
+                                title: product.product_name
+                            %>
+                        </div>
+                        <div class="product-content">
+                            <h6 class="product-name">
+                                <%= link_to product.product_name, product_link(product), title: product.product_name %>
+                            </h6>
+                            <div class="price-box">
+                                <span class="new-price">Giá bán sỉ</span>
+                            </div>
+
+                            <div class="product-button-action">
+                                <a href="tel:097 202 81 99" class="call">Bấm để liên hệ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+<!-- Product Area Start -->

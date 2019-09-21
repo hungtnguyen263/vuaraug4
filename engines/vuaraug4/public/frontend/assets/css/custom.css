@@ -4,8 +4,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", "Helvetica", sans-serif;
 }
+.fz-15 {
+  font-size: 15px;
+}
 header.header .contact-info .telephone {
-  font-size: 18px;s
+  font-size: 18px;
   line-height: 18px;
 }
 header.header .contact-info .single-costomer-box {
@@ -35,7 +38,7 @@ header.header .contact-info .single-costomer-box {
 .footer-top {  
   position: relative;
   background-image: url(../images/bg/footer-bg.png), linear-gradient(rgb(66, 66, 66),rgb(0, 0, 0, 0.5));
-    background-blend-mode: overlay;
+  background-blend-mode: overlay;
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -50,6 +53,7 @@ header.header .contact-info .single-costomer-box {
 }
 .contact-call-wrap .footer-call h6, .contact-call-wrap-top .footer-call h6 {
   font-weight: 900;
+  color: #ff8d00;
 }
 .widget-footer .company-name {
   font-size: 20px;
@@ -68,13 +72,13 @@ header.header .contact-info .single-costomer-box {
 }
 .hero-content-one .slider-content-text p, .hero-content-two .slider-content-text p {
   color: #ffffff;
-    font-size: 16px;
-    padding: 5px 30px;
-    background: rgba(0, 0, 0, 0.498039);
-    width: auto;
-    /* display: inline-block; */
-    display: table;
-    font-weight: 600 !important;
+  font-size: 16px;
+  padding: 5px 30px;
+  background: rgba(0, 0, 0, 0.498039);
+  width: auto;
+  /* display: inline-block; */
+  display: table;
+  font-weight: 600 !important;
 }
 .single-product-wrap .product-content .product-name, .single-product-two .product-content .product-name {
   font-size: 15px;
@@ -106,19 +110,19 @@ header.header .contact-info .single-costomer-box {
   padding: 0 18px;
 }
 .pagination-box li > span {
-    color: #333333;
-    display: block;
-    padding: 0 12px;
-    height: 30px;
-    background: #f1f1f1;
-    line-height: 30px;
-    text-align: center;
-    font-size: 14px;
-    border-radius: 3px;
+  color: #333333;
+  display: block;
+  padding: 0 12px;
+  height: 30px;
+  background: #f1f1f1;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 3px;
 }
 .pagination-box li.active > span {
-    color: #ffffff;
-    background: #80BB01;
+  color: #ffffff;
+  background: #80BB01;
 }
 .pagination-box li.prev.disabled, .pagination-box li.next.disabled {
     display: none;
@@ -143,22 +147,43 @@ header.header .contact-info .single-costomer-box {
   left: 0px;
 }
 .single-add-to-cart .call-me {
-    background: #0E7346;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: -0.025em;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 35px;
-    text-shadow: none;
-    text-align: center;
-    border-radius: 3px;
-    -webkit-transition: 0.3s ease;
-    -o-transition: 0.3s ease;
-    transition: 0.3s ease;
-    width: 100%;
+  background: #0E7346;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 35px;
+  text-shadow: none;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+  width: 100%;
+}
+.product-module {
+  padding: 0 0 60px;
+}
+.bg-image-01 {
+  background: url(../images/bg/bg-1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bg-image-02 {
+  background: url(../images/bg/bg-2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bg-image-03 {
+  background: url(../images/bg/bg-3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.welcome-section p {
+  margin: 30px auto 60px;
 }
