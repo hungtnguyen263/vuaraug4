@@ -15,8 +15,9 @@
                             </div>
                         </div>
                         <div class="footer-addres">
-                            <p><i class="fa fa fa-home"></i> Địa chỉ: 188 Đường số 1, Phường 16, Quận Gò Vấp, Thành phố Hồ Chí Minh, Việt Nam</p>
-                            <p><i class="fa fa-envelope-o"></i> Email: soft.support@hoangkhang.com.vn</p>
+                            <p><i class="fa fa fa-home"></i> <%= full_address(web_info) %></p>
+                            <p><i class="fa fa-envelope-o"></i> <%= web_info.email %></p>
+                            <p><i class="fa fa-globe"></i> <%= web_info.website %></p>
                         </div>
 
                         <ul class="social-icons">
