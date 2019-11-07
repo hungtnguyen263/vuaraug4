@@ -1,9 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="vi-VN">
+<html lang="vi-VN">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noodp,index,follow">
+    <meta name="author" content="vua rau g4, Vựa Rau G4 - Hóc Môn">
+    <meta name="copyright" content="Vua Rau G4 [vuaraug4@gmail.com]">
     <title>
         <% if content_for?(:title) %>
             <%= yield(:title) %> | Vựa rau củ quả uy tín tại TP.HCM
@@ -22,7 +26,20 @@
     <% else %>
     <meta name="keywords" content="vựa rau g4, vựa rau sài gòn, rau sạch giá sỉ, cung ứng rau củ quả, chợ đầu mối, hóc môn, vua rau sai gon, rau sach gia si, cung cap rau sach, cho dau moi hoc mon, nông sản giá sỉ">
     <% end %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <meta property="og:image:width" content="1000" />
+	<meta property="og:image:height" content="660" />
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151725287-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-151725287-1');
+    </script>
+
     
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="/frontend/assets/images/favicon.ico">
@@ -68,7 +85,7 @@
 </head>
 
 <body>
-
+    <% @web_info = Erp::Contacts::Contact.get_main_contact %>
     <div class="main-wrapper">
         
         <%= render "layouts/erp/frontend/modules/header", web_info: @web_info %>
