@@ -1,5 +1,5 @@
 body {
-  font-family: "Rubik", "Roboto", "Helvetica", sans-serif;
+  font-family: "Roboto", "Helvetica", sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", "Helvetica", sans-serif;
@@ -186,4 +186,25 @@ header.header .contact-info .single-costomer-box {
 }
 .welcome-section p {
   margin: 30px auto 60px;
+}
+.about-welcome-text {
+  font-size: 15px !important;
+}
+
+.about-welcome-text ul {
+  padding-left: 20px;
+  padding-bottom: 15px;
+}
+.about-welcome-text p {
+  margin-bottom: 10px;
+  font-size: 15px !important;
+}
+.about-welcome-text blockquote {
+  padding: 10px 15px;
+  margin: 0;
+  font-size: 15px;
+  border-left: 5px solid #ff8100;
+  font-weight: inherit;
+  background: #d0e9ff;
+  border-radius: 10px;
 }
