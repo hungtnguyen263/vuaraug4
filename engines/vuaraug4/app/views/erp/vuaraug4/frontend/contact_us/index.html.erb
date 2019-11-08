@@ -36,23 +36,21 @@
                                         <i class="fa fa-home"></i>
                                         <h4>Địa chỉ</h4>
                                     </div>
-                                    <p>123 Main Street, Anytown, CA 12345 – USA</p>
+                                    <p><%= full_address(@web_info) %></p>
                                 </li>
                                 <li>
                                     <div class="contact-title">
                                         <i class="fa fa-phone"></i>
                                         <h4>Điện thoại</h4>
                                     </div>
-                                    <p>Di động: (08) 123 456 789<br>
-                                        Hotline: 1009 678 456</p>
+                                    <p><%= link_to @web_info.phone, "tel:#{@web_info.phone}" %></p>
                                 </li>
                                 <li>
                                     <div class="contact-title">
                                         <i class="fa fa-envelope-open-o"></i>
                                         <h4>Email</h4>
                                     </div>
-                                    <p>yourmail@domain.com<br>
-                                        support@roadthemes.com</p>
+                                    <p><%= mail_to @web_info.email %></p>
                                 </li>
                             </ul>
                         </div>
@@ -69,13 +67,13 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="single-input">
-                                            <label> Họ và tên (required)</label>
+                                            <label> Họ và tên *</label>
                                             <input name="con_name" type="text">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="single-input">
-                                            <label> Số điện thoại (required)</label>
+                                            <label> Số điện thoại *</label>
                                             <input name="con_email" type="email">
                                         </div>
                                     </div>
