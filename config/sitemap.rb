@@ -1,7 +1,7 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://timhangcongnghe.com"
-SitemapGenerator::Interpreter.send :include, Erp::OnlineStore::Engine.routes.url_helpers
-SitemapGenerator::Interpreter.send :include, Erp::OnlineStore::ApplicationHelper
+SitemapGenerator::Sitemap.default_host = "http://vuaraug4.com"
+SitemapGenerator::Interpreter.send :include, Erp::Vuaraug4::Engine.routes.url_helpers
+SitemapGenerator::Interpreter.send :include, Erp::Vuaraug4::ApplicationHelper
 SitemapGenerator::Interpreter.send :include, Erp::ApplicationHelper
 
 SitemapGenerator::Sitemap.create do
@@ -29,21 +29,11 @@ SitemapGenerator::Sitemap.create do
   #   end
 
   # add search_path
-  add deal_products_path
-  add bestseller_products_path
-  add business_choices_path
-  add stock_inventory_path
-  add blog_path
-  add events_path
-  add business_page_path
+  #add blog_path
   add about_us_path
   add contact_us_path
-  add faq_path
-  add terms_and_conditions_path
-  add site_map_path
-  add brand_listing_path
-  add computer_services_path
-  add network_services_path
+  add all_product_path
+  #add brand_listing_path
   # add "dang-ky-nhan-tin.html"
 
   # product link
@@ -53,21 +43,16 @@ SitemapGenerator::Sitemap.create do
 
   # menu link
   Erp::Menus::Menu.get_active.each do |menu|
-    add category_path(menu_id: menu.id, title: url_friendly(menu.name))
+    add product_listing_path(title: url_friendly(menu.name), menu_id: menu.id)
   end
 
   # article link
   Erp::Articles::Article.get_active.each do |article|
-    add blog_detail_path(article.id, title:  url_friendly(article.name))
-  end
-
-  # event link
-  Erp::Products::Event.events_active.each do |event|
-    add event_detail_path(event_id: event.id, title: url_friendly(event.name))
+    #add blog_detail_path(article.id, title:  url_friendly(article.name))
   end
 
   # brand link
   Erp::Products::Brand.get_active.each do |brand|
-    add brand_detail_path(brand_id: brand.id, title: url_friendly(brand.name))
+    #add brand_detail_path(brand_id: brand.id, title: url_friendly(brand.name))
   end
 end
