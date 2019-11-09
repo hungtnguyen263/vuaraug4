@@ -5,7 +5,7 @@
                 <div class="col-lg-4 col-md-6">
 
                     <div class="widget-footer mt-40">
-                        <h6 class="title-widget company-name">G4 FINE FOODS - VỰA RAU G4</h6>
+                        <h6 class="title-widget company-name">VỰA RAU G4</h6>
 
                         <div class="contact-call-wrap">
                             <img src="/frontend/assets/images/icon/img-headphone.png" alt="">
@@ -36,19 +36,23 @@
                     <div class="widget-footer mt-40">
                         <h6 class="title-widget">Thông tin</h6>
                         <ul class="footer-list">
-                            <li><a href="#">Trang chủ</a></li>
-                            <li><a href="#">Giới thiệu</a></li>
-                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="<%= erp_vuaraug4.root_path %>">Trang chủ</a></li>
+                            <li><a href="<%= erp_vuaraug4.about_us_path %>">Giới thiệu</a></li>
+                            <li><a href="<%= erp_vuaraug4.contact_us_path %>">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="widget-footer mt-40">
-                        <h6 class="title-widget">Sản phẩm cung ứng</h6>
+                        <h6 class="title-widget">Các loại rau củ</h6>
                         <ul class="footer-list">
-                            <li><a href="#">Các loại rau</a></li>
-                            <li><a href="#">Các loại củ</a></li>
-                            <li><a href="#">Các loại quả</a></li>
+                            <% @menus = Erp::Menus::Menu.get_active.where(parent_id: nil) %>
+                            <% @menus.each do |sp| %>
+                            <%
+                                @link = menu_link(sp)
+                            %>
+                            <li><a href="<%= @link %>"><%= sp.name %></a></li>
+                            <% end %>
                         </ul>
                     </div>
                 </div>
